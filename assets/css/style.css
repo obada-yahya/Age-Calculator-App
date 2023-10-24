@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,100;1,200;1,300;1,400;1,600;1,700&display=swap");
+
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background-color: #f0f0f0ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 35vw;
+  height: 350px;
+  max-height: 450px;
+  padding: 3%;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 3%;
+  border-bottom-right-radius: 25%;
+}
+.date {
+  width: 75%;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.date section input[type="number"] {
+  width: 100px;
+  height: 45px;
+  font-weight: 600;
+  font-size: 1.5rem;
+  padding-left: 10px;
+  border: 1px solid rgba(235, 235, 235, 0.8);
+  outline: none;
+  border-radius: 5px;
+  transition: border-color 0.3s 0s ease-in-out;
+}
+.date section input:focus,
+.date section input:hover {
+  border: 1px solid #864cff;
+}
+.date section label {
+  color: #767676;
+  font-size: 0.7em;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.date section {
+  display: flex;
+  flex-direction: column;
+}
+
+.divider {
+  width: 100%;
+  position: relative;
+  height: 1em;
+  display: flex;
+  align-items: center;
+}
+.divider hr {
+  width: 90%;
+  background-color: rgba(240, 232, 232, 0.999);
+  border: none;
+  height: 1px;
+  margin-left: 0;
+}
+.divider .arrow-style img {
+  width: 50%;
+  position: absolute;
+  left: 1.2em;
+  top: 1em;
+  cursor: pointer;
+}
+.divider .arrow-style {
+  position: relative;
+  border: none;
+  background-color: #864cff;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+}
+
+.calculate {
+  width: 100%;
+  margin-top: 2rem;
+}
+.calculate section {
+  font-size: 4.75em;
+  font-weight: 800;
+  line-height: 1em;
+  font-style: italic;
+}
+.calculate span {
+  color: #844dff;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.65em;
+}
+@media (max-width: 1175px) {
+  .card {
+    height: 250px;
+    width: 50vw;
+    padding: 1.5%;
+    padding-top: 2%;
+  }
+  .date {
+    width: 100%;
+  }
+  .divider .arrow-style {
+    position: absolute;
+    left: 40%;
+    transform: scale(0.8);
+  }
+  .divider hr {
+    width: 100%;
+  }
+  .calculate {
+    font-size: 0.8em;
+  }
+  .calculate section {
+    font-size: 3em;
+  }
+}
+
+@media (max-width: 750px) {
+  .card {
+    width: 60vw;
+  }
+  .date section input[type="number"] {
+    height: 30px;
+    margin-bottom: 5px;
+  }
+  .date section label {
+    font-size: 0.5em;
+  }
+  .error-message {
+    font-size: 0.5em;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    height: 250px;
+    width: 70vw;
+  }
+  .date section {
+    min-width: 50px;
+  }
+  .date section input[type="number"] {
+    font-size: 1em;
+    width: 90px;
+    padding-left: 5px;
+  }
+  .divider .arrow-style {
+    text-align: center;
+  }
+}

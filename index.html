@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Frontend Mentor | Age calculator app</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="date">
+        <section>
+          <label>DAY</label>
+          <input placeholder="DD" type="number" />
+        </section>
+        <section>
+          <label>MONTH</label>
+          <input placeholder="MM" type="number" />
+        </section>
+        <section>
+          <label>YEAR</label>
+          <input placeholder="YYYY" type="number" />
+        </section>
+      </div>
+      <div class="divider">
+        <hr />
+        <button class="arrow-style">
+          <img src="./assets/images/icon-arrow.svg" alt="arrow" />
+        </button>
+      </div>
+
+      <div class="calculate">
+        <section><span>--</span> years</section>
+        <section><span>--</span> months</section>
+        <section><span>--</span> days</section>
+      </div>
+    </div>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
