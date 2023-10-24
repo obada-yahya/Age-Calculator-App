@@ -8,6 +8,7 @@ btn.addEventListener("click", () => {
   removeErrorMessagesBlocks();
   let isValidDateFormat = true;
   if (checkAndCreateEmptyFields()) isValidDateFormat = false;
+  console.warn(isValidDateFormat);
   const [day, month, year] = dateArray;
   if (
     !checkValidDateInputValues({
@@ -75,21 +76,22 @@ function checkValidDateInputValues(currentDate) {
     YYYY: [100, new Date().getFullYear()],
   };
   const datesErrorMessages = {
-    DD: "Must be a valid day",
-    MM: "Must be a valid month",
-    YYYY: "Must be in the past",
+    DD: ["Must be a valid day", "Must be a valid day"],
+    MM: ["Must be a valid month", "Must be a valid month"],
+    YYYY: ["Must be in the past", "Must be above 99"],
   };
   var isValid = true;
   for (let i = 0; i < sectionInputFields.length; i++) {
     var placeholder = dateArray[i].getAttribute("placeholder");
     if (currentDate[placeholder] == "") continue;
-    if (
-      datesMaxValidValues[placeholder][0] > currentDate[placeholder] ||
-      datesMaxValidValues[placeholder][1] < currentDate[placeholder]
-    ) {
+    if (datesMaxValidValues[placeholder][0] > currentDate[placeholder]) {
       isValid = false;
       if (sectionInputFields[i])
-        styleAndCreateErrorMessage(datesErrorMessages[placeholder], i);
+        styleAndCreateErrorMessage(datesErrorMessages[placeholder][1], i);
+    } else if (datesMaxValidValues[placeholder][1] < currentDate[placeholder]) {
+      isValid = false;
+      if (sectionInputFields[i])
+        styleAndCreateErrorMessage(datesErrorMessages[placeholder][0], i);
     }
   }
   return isValid;

@@ -35,7 +35,7 @@ input[type="number"]::-webkit-inner-spin-button {
   margin: 0;
 }
 .date section input[type="number"] {
-  width: 100px;
+  width: 105px;
   height: 45px;
   font-weight: 600;
   font-size: 1.5rem;
